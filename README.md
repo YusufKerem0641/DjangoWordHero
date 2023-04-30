@@ -1,8 +1,6 @@
-# Django Word Hero
-This is a solution for the game [Wordle](https://wordlegame.org/tr), for those who struggle to play it well.
+# Learning-Projects
+This repository contains various projects I have completed throughout my educational journey, covering different programming languages, technologies, and topics. Additionally, this repository includes anything I have self-learned and practiced.
 
-## Purpose
-The main purpose of this project is to generate a solution for the game Wordle.
+Each project folder will be named after the project and will include a Readme file containing project requirements, usage, and any other important information about the project. Project folders can be divided into subfolders based on the programming language and technologies used.
 
-## How Does It Work?
-This program downloads a file containing all the words of a language from Wikipedia and stores it in a local database. Then, it generates a word solution based on the letters provided by the user, along with any unknown or excluded letters.
+The projects in this repository are those that I have completed while learning and updating as I learn. They may not always be perfect, but they are constantly being updated as I improve and learn.
