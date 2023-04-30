@@ -5,7 +5,7 @@ Each project folder will be named after the project and will include a Readme fi
 
 The projects in this repository are those that I have completed while learning and updating as I learn. They may not always be perfect, but they are constantly being updated as I improve and learn.
 
-#Öğrenme Projeleri
+# Öğrenme Projeleri
 Bu depo, eğitim hayatım boyunca yaptığım çeşitli projeleri içermektedir. Projeler, farklı programlama dilleri, teknolojileri ve konuları kapsayabilir. Aynı zamanda, bu depo, kendi kendime öğrendiğim ve pratik yaptığım herhangi bir şeyi içerebilir.
 
 Her proje klasörü, projenin adını taşıyacak ve içinde projenin gereksinimlerini, nasıl kullanılacağını ve proje hakkında diğer önemli bilgileri içeren bir Readme dosyası olacaktır. Proje klasörleri, projenin kullanılan programlama dili ve teknolojilerine göre alt klasörlere ayrılabilir.
