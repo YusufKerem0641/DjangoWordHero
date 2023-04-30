@@ -5,7 +5,7 @@ The Browser class opens the browser, controls the pages, performs the button cli
 
 The App class creates the GUI and executes user interface interactions. For example, the user can launch the browser, configure the URL and other settings, click the save button, and save the HTML source code to a specified location.
 
-# Automatic Key Pressing /
+# Automatic Key Pressing / Turkish
 Bu depo, Selenium ve threading kütüphanelerini kullanarak bir web sitesindeki belirli bir düğmeye tıklama işlemini otomatikleştiren bir programı içermektedir. Program, GUI'ye (grafik kullanıcı arayüzü) sahiptir ve kullanıcının bazı ayarları yapılandırmasına izin verir (örneğin, düğmeye tıklama aralığı vb.).
 
 Browser sınıfı, tarayıcıyı açar, sayfaları kontrol eder, düğmeye tıklama işlemini gerçekleştirir ve HTML kaynak kodunu kaydeder. Ayarlar sınıfı, kullanıcının yapılandırması gereken özelliklerin değerlerini içerir.
