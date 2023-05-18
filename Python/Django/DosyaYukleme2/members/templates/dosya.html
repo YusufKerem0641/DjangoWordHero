@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Php ders</title>
+    <link rel="stylesheet" href="{% static 'style/w3.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'style/header.css' %}">
+    <link rel="stylesheet" href="{% static 'style/dosyaMain.css' %}">
+    <script src="{% static 'js/dosyaMain.js' %}"></script>
+</head>
+<body onresize="headerPencereBoyut();imageSize()"><!--pencere boyutu değiştiğinde fonksiyonu çalıştırır-->
+    {% include "./html/header.html" %}
+    <main class="w3-padding-large">
+        <div>
+        {% for i in data %}
+            <div class=" w3-padding-top-64">
+                <h2 class="w3-margin-top">{{i.date}}</h2>
+                <hr>
+                <div class="w3-row w3-round-large w3-display-container">
+                    <div class="w3-container w3-third w3-round-large">
+                        {% if i.fileType == 1 %}
+                            <img class="w3-block" src="{% static 'img/metinbelgesi.png' %}" alt="uzanti resmi">
+                        {% elif i.fileType == 2 %}
+                            <img class="w3-block" src="{% static 'img/powerpoint.png' %}" alt="uzanti resmi">
+                        {% elif i.fileType == 3 %}
+                            <img class="w3-block" src="{% static 'img/word.png' %}" alt="uzanti resmi">
+                        {% elif i.fileType == 4 %}
+                            <img class="w3-block" src="{% static 'img/excel.png' %}" alt="uzanti resmi">
+                        {% elif i.fileType == 5 %}
+                            <img class="w3-block" src="{% static 'img/diger.png' %}" alt="uzanti resmi">
+                        {% endif %}
+                    </div>
+                    <div class="w3-container w3-twothird">
+                        <h2>{{i.fileName}}</h2>
+                        <p>{{i.info}}</p>
+                        <br>
+                    </div>
+                    
+                    <form method=POST class="w3-padding w3-display-bottomright">
+                        {% csrf_token %} 
+                        <input name="download" value="{{i.id}}">
+                        <input id="buton" class=" w3-round-large w3-red" type=submit name=buton value="Dosyayı İndir">
+                    </form>
+                </div>
+            </div>
+            <br>    
+        
+        {% endfor %}
+    </div>
+    </main>
+    <script>headerPencereBoyut();imageSize()</script>
+</body>
+</html>

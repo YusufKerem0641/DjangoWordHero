@@ -1,0 +1,12 @@
+header button:first-child{
+    background-color:inherit;
+    border:0;
+}
+
+header button:first-child img {
+    width: 50px;
+}
+
+header button:last-child img{
+    height: 21px;
+}

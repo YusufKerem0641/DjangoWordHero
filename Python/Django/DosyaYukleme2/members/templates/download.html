@@ -1,0 +1,8 @@
+<h2>Dosya İndrime</h2>
+<form action="../uploadControl/" method="post">
+    {% csrf_token %}
+    File:<br>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,16 @@
+main>div{
+    margin: auto;
+    max-width: 900px;
+}
+main>div>div>div{
+    background-color: rgb(229,231,236);
+}
+div[class*="w3-third"]{
+    border: 2px solid black;
+}
+/*main img{
+    width: 300px;
+}*/
+input[name="download"]{
+    display: none;
+}

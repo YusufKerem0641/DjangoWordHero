@@ -1,0 +1,36 @@
+main{
+    position: relative;
+}
+main h2{
+    margin: 0;
+}
+main div div.div1 {
+    background-color: #00c4cd!important;
+}
+main div div.div2 {
+    background-color: #a648fe!important;
+}
+main div div.div3 {
+    background-color: #6422b8!important;
+}
+main div div.div4 {
+    background-color: #fe738d!important;
+}
+main div div.div5 {
+    background-color: #ffa53d!important;
+}
+main div div.div6 {
+    background-color: #fed83a!important;
+}
+main div div img{
+    width: 150px;
+}
+main h1{
+    display: none;
+}
+main>div>a>div{
+    min-height: 200px;
+}
+main>div>div{
+    min-height: 600px;
+}

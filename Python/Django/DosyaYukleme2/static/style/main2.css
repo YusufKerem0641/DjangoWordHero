@@ -1,0 +1,34 @@
+div[class*="w3-row w3-border-left w3-padding-16"]{
+    margin: auto;
+    max-width: 900px;
+}
+hr{
+    border-top: 1px solid #8c8b8b;
+}
+
+div.mainl{
+    background-color: rgb(249, 144, 137);
+}
+
+img{
+    padding-right: 4px;
+}
+
+p.date{
+    margin-top: 0;
+}
+h2.botZero{
+    margin-bottom: 0;
+}
+hr.topZero{
+    margin-top: 0;
+}
+br{
+    clear: both;
+}
+span.text-bold{
+    font-weight: bold;
+}
+span.text-italic{
+    font-style: italic;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Php ders</title>
+    <link rel="stylesheet" href="../../static/style/w3.css">
+    <script src="../../static/js/header.js"></script>
+    <link rel="stylesheet" href="../../static/style/header.css">
+    <link rel="stylesheet" href="../../static/style/hakkimizda.css">
+    <script src="../../static/js/hakkimizda.js"></script>
+
+    </head>
+<body onresize="headerPencereBoyut();hakkimizda_div_boyut()"><!--pencere boyutu değiştiğinde fonksiyonu çalıştırır-->
+    {% include "./html/header.html" %}
+    {% include "./html/hakkimizda.html" %}
+
+    <script>headerPencereBoyut();hakkimizda_div_boyut()</script>
+</body>
+</html>

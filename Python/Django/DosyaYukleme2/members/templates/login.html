@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Php ders</title>
+    <link rel="stylesheet" href="../../static/style/w3.css">
+    <script src="../../static/js/header.js"></script>
+    <link rel="stylesheet" href="../../static/style/header.css">
+
+</head>
+<body onresize="headerPencereBoyut();"><!--pencere boyutu değiştiğinde fonksiyonu çalıştırır-->
+    {% include "./html/header.html" %}
+
+    <h2>Giriş</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ girdimi }}
+        Name:<br>
+        <input name="Name">
+        <br><br>
+        Password:<br>
+        <input name="Password">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>headerPencereBoyut();hakkimizda_div_boyut()</script>
+</body>
+</html>
+
