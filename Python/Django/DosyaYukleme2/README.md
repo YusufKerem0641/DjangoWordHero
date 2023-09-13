@@ -8,5 +8,5 @@ Bu proje, öğrencilerin ders notlarını, ödevlerini, sunumlarını, projeleri
 
 ## Screen Captures / Ekran Görüntüleri
 
-![Oyun Görüntüsü 1](Screenshot/1.png)
-![Oyun Görüntüsü 2](Screenshot/2.png)
+![Oyun Görüntüsü 1](Screenshot/Screenshot1.png)
+![Oyun Görüntüsü 2](Screenshot/Screenshot1.png)
