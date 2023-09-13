@@ -10,4 +10,4 @@ Bu proje, öğrencilerin ders notlarını, ödevlerini, sunumlarını, projeleri
 
 ![Oyun Görüntüsü 1](Screenshot/Screenshot1.png)
 * *
-![Oyun Görüntüsü 2](Screenshot/Screenshot1.png)
+![Oyun Görüntüsü 2](Screenshot/Screenshot2.png)
