@@ -25,8 +25,19 @@ class Header extends React.Component{
 class ToDoList extends React.Component{
     constructor (props){
         super(props);
-        this.clearItems = this.clearItems.bind(this);
+        this.clearItems = this.clearItems.bind(this);//this e yeniden sahip olmak için
+        this.degerDegistir = this.degerDegistir.bind(this);
+        this.state = {numara : this.props.numberList[0]};
     }
+    degerDegistir(){
+        //this.state.numara = "11"; 
+        // bunun yerine html de değişsin diye
+        // state olmak zorunda
+        this.setState (
+            {numara: "1"}
+        );
+    }
+
     clearItems(){
         console.log(this.props);
     }
@@ -38,13 +49,32 @@ class ToDoList extends React.Component{
             {this.props.numberList.map( (item,index) => {
                 return <li key={index} > { item}</li>;
             })}
-            <button onClick = {this.clearItems}></button>
+            <button onClick = {this.clearItems}> temizle </button>
+            <button onClick = {this.degerDegistir}> degistir </button>
+            <p>{this.state.numara}</p>
             </div>
         );
     }
 }
 
+class Action extends React.Component{
+    onFromSumbmit(event){
+        event.preventDefault();
+        let a = event.target.elements.isim.value;
+        console.log(a);
+    }
+    render(){
+        return(
+            <form onSubmit={this.onFromSumbmit}>
+                <input type="text" name="isim" />
+                <button type="submit"> add item </button>
+            </form>
+        );
+    }
+}
+
 class ToDoApp extends React.Component{
+    
     
     render(){
         
@@ -52,9 +82,11 @@ class ToDoApp extends React.Component{
         var numberList = ["10","20","30","40"]; 
         const title = "asdf";
         
+        
         return(
             <div>
                 <Header title ={title} numberList={numberList}/>
+                <Action/>
             </div>
         );
     }

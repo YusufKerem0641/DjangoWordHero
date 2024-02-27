@@ -47,10 +47,24 @@ var ToDoList = /*#__PURE__*/function (_React$Component2) {
     var _this;
     _classCallCheck(this, ToDoList);
     _this = _callSuper(this, ToDoList, [props]);
-    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this));
+    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this)); //this e yeniden sahip olmak için
+    _this.degerDegistir = _this.degerDegistir.bind(_assertThisInitialized(_this));
+    _this.state = {
+      numara: _this.props.numberList[0]
+    };
     return _this;
   }
   _createClass(ToDoList, [{
+    key: "degerDegistir",
+    value: function degerDegistir() {
+      //this.state.numara = "11"; 
+      // bunun yerine html de değişsin diye
+      // state olmak zorunda
+      this.setState({
+        numara: "1"
+      });
+    }
+  }, {
     key: "clearItems",
     value: function clearItems() {
       console.log(this.props);
@@ -65,13 +79,43 @@ var ToDoList = /*#__PURE__*/function (_React$Component2) {
         }, " ", item);
       }), /*#__PURE__*/React.createElement("button", {
         onClick: this.clearItems
-      }));
+      }, " temizle "), /*#__PURE__*/React.createElement("button", {
+        onClick: this.degerDegistir
+      }, " degistir "), /*#__PURE__*/React.createElement("p", null, this.state.numara));
     }
   }]);
   return ToDoList;
 }(React.Component);
-var ToDoApp = /*#__PURE__*/function (_React$Component3) {
-  _inherits(ToDoApp, _React$Component3);
+var Action = /*#__PURE__*/function (_React$Component3) {
+  _inherits(Action, _React$Component3);
+  function Action() {
+    _classCallCheck(this, Action);
+    return _callSuper(this, Action, arguments);
+  }
+  _createClass(Action, [{
+    key: "onFromSumbmit",
+    value: function onFromSumbmit(event) {
+      event.preventDefault();
+      var a = event.target.elements.isim.value;
+      console.log(a);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("form", {
+        onSubmit: this.onFromSumbmit
+      }, /*#__PURE__*/React.createElement("input", {
+        type: "text",
+        name: "isim"
+      }), /*#__PURE__*/React.createElement("button", {
+        type: "submit"
+      }, " add item "));
+    }
+  }]);
+  return Action;
+}(React.Component);
+var ToDoApp = /*#__PURE__*/function (_React$Component4) {
+  _inherits(ToDoApp, _React$Component4);
   function ToDoApp() {
     _classCallCheck(this, ToDoApp);
     return _callSuper(this, ToDoApp, arguments);
@@ -85,7 +129,7 @@ var ToDoApp = /*#__PURE__*/function (_React$Component3) {
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Header, {
         title: title,
         numberList: numberList
-      }));
+      }), /*#__PURE__*/React.createElement(Action, null));
     }
   }]);
   return ToDoApp;
