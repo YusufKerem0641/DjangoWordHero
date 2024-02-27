@@ -6,27 +6,67 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-var Person = /*#__PURE__*/function () {
-  function Person() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "guest";
-    var year = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2000;
-    _classCallCheck(this, Person);
-    this.name = name;
-    this.year = year;
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+var Header = /*#__PURE__*/function (_React$Component) {
+  _inherits(Header, _React$Component);
+  function Header() {
+    _classCallCheck(this, Header);
+    return _callSuper(this, Header, arguments);
   }
-  _createClass(Person, [{
-    key: "calculateAge",
-    value: function calculateAge() {
-      return new Date().getFullYear() - this.year;
-    }
-  }, {
-    key: "greeting",
-    value: function greeting(text) {
-      return "".concat(text, ", my name is ").concat(this.name);
+  _createClass(Header, [{
+    key: "render",
+    value: function render() {
+      console.log(this.props.title); // dışardan değişken alamaya yarar htmlden
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "naber"), /*#__PURE__*/React.createElement("h2", null, "tamam"));
     }
   }]);
-  return Person;
-}();
-var p1 = new Person("hasan");
-console.log(p1.greeting("hello"));
-console.log(p1.calculateAge());
+  return Header;
+}(React.Component); //yeni bir tag gibi düşünebilirsin
+/*function Header(props){
+    console.log(props.title);
+        return (
+            <div>
+                <h1>`${props.title}`</h1>
+                <h2>tamam</h2>
+            </div>
+        );
+    } // burda htmlden değişken almaya yarar
+*/
+var ToDo = /*#__PURE__*/function (_React$Component2) {
+  _inherits(ToDo, _React$Component2);
+  function ToDo() {
+    _classCallCheck(this, ToDo);
+    return _callSuper(this, ToDo, arguments);
+  }
+  _createClass(ToDo, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("div", null, "naber");
+    }
+  }]);
+  return ToDo;
+}(React.Component);
+var ToDoApp = /*#__PURE__*/function (_React$Component3) {
+  _inherits(ToDoApp, _React$Component3);
+  function ToDoApp() {
+    _classCallCheck(this, ToDoApp);
+    return _callSuper(this, ToDoApp, arguments);
+  }
+  _createClass(ToDoApp, [{
+    key: "render",
+    value: function render() {
+      var title = "asdf";
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Header, {
+        title: title
+      }), /*#__PURE__*/React.createElement(ToDo, null));
+    }
+  }]);
+  return ToDoApp;
+}(React.Component); // her şeyi buraya koyuyoruz
+ReactDOM.render( /*#__PURE__*/React.createElement(ToDoApp, null), document.getElementById('root'));

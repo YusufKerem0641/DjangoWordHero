@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server public",
-    "babel": "npx babel src/examples/classes.js -o public/scripts/app.js -w"
+    "babel": "npx babel src/app.js -o public/scripts/app.js -w"
   },
   "keywords": [],
   "author": "",
