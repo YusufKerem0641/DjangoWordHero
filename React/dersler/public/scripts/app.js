@@ -23,7 +23,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       console.log(this.props.title); // dışardan değişken alamaya yarar htmlden
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "naber"), /*#__PURE__*/React.createElement("h2", null, "tamam"));
+      console.log(this.props.numberList);
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, this.props.title), /*#__PURE__*/React.createElement(ToDoList, {
+        numberList: this.props.numberList
+      }));
     }
   }]);
   return Header;
@@ -38,19 +41,34 @@ var Header = /*#__PURE__*/function (_React$Component) {
         );
     } // burda htmlden değişken almaya yarar
 */
-var ToDo = /*#__PURE__*/function (_React$Component2) {
-  _inherits(ToDo, _React$Component2);
-  function ToDo() {
-    _classCallCheck(this, ToDo);
-    return _callSuper(this, ToDo, arguments);
+var ToDoList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(ToDoList, _React$Component2);
+  function ToDoList(props) {
+    var _this;
+    _classCallCheck(this, ToDoList);
+    _this = _callSuper(this, ToDoList, [props]);
+    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this));
+    return _this;
   }
-  _createClass(ToDo, [{
+  _createClass(ToDoList, [{
+    key: "clearItems",
+    value: function clearItems() {
+      console.log(this.props);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "naber");
+      console.log(this.props.numberList);
+      return /*#__PURE__*/React.createElement("div", null, this.props.numberList.map(function (item, index) {
+        return /*#__PURE__*/React.createElement("li", {
+          key: index
+        }, " ", item);
+      }), /*#__PURE__*/React.createElement("button", {
+        onClick: this.clearItems
+      }));
     }
   }]);
-  return ToDo;
+  return ToDoList;
 }(React.Component);
 var ToDoApp = /*#__PURE__*/function (_React$Component3) {
   _inherits(ToDoApp, _React$Component3);
@@ -61,10 +79,13 @@ var ToDoApp = /*#__PURE__*/function (_React$Component3) {
   _createClass(ToDoApp, [{
     key: "render",
     value: function render() {
+      this.naber = "a";
+      var numberList = ["10", "20", "30", "40"];
       var title = "asdf";
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Header, {
-        title: title
-      }), /*#__PURE__*/React.createElement(ToDo, null));
+        title: title,
+        numberList: numberList
+      }));
     }
   }]);
   return ToDoApp;

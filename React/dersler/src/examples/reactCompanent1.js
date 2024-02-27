@@ -3,7 +3,7 @@ class Header extends React.Component{
         console.log(this.props.title);// dışardan değişken alamaya yarar htmlden
         return (
             <div>
-                <h1>{this.props.title}</h1>
+                <h1>naber</h1>
                 <h2>tamam</h2>
             </div>
         );
@@ -31,11 +31,10 @@ class ToDo extends React.Component{
 
 class ToDoApp extends React.Component{
     render(){
-        var numberList = ["10","20","30","40"]; 
         const title = "asdf";
         return(
             <div>
-                <Header title ={title} list = {numberList}/>
+                <Header title ={title}/>
                 <ToDo/>
             </div>
         );
