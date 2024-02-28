@@ -55,18 +55,39 @@ var ToDoList = /*#__PURE__*/function (_React$Component2) {
     return _this;
   }
   _createClass(ToDoList, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var json = localStorage.getItem("numara");
+      var numara = JSON.parse(json);
+      numara && this.setState({
+        numara: numara
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, precState) {
+      if (precState.numara !== this.state.numara) {
+        var json = JSON.stringify(this.state.numara);
+        localStorage.setItem('numara', json);
+      }
+    }
+  }, {
     key: "degerDegistir",
     value: function degerDegistir() {
       //this.state.numara = "11"; 
       // bunun yerine html de değişsin diye
       // state olmak zorunda
       this.setState({
-        numara: "1"
+        numara: this.state.numara + 1
       });
+      console.log(this.state.numara);
     }
   }, {
     key: "clearItems",
     value: function clearItems() {
+      this.setState({
+        numara: 0
+      });
       console.log(this.props);
     }
   }, {

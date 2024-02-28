@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server public",
-    "babel": "npx babel src/app.js -o public/scripts/app.js -w"
+    "start-live": "live-server public",
+    "babel": "npx babel src/app.js -o public/scripts/app.js -w",
+    "webpack-build": "webpack --mode production",
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,14 @@
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
